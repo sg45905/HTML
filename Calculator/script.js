@@ -4,16 +4,16 @@ let currentNumber = '0'
 
 // check if number key pressed
 const inputNumber = (number) => {
-    if(currentNumber === '0'){
+    if(currentNumber === '0') {
         currentNumber = number
-    }else{
+    } else {
         currentNumber += number
     }
 }
 
 // check if operator key pressed
 const inputOperator = (operator) => {
-    if(calcOperator === ''){
+    if(calcOperator === '') {
         prevNumber = currentNumber
     }
     calcOperator = operator
@@ -22,9 +22,9 @@ const inputOperator = (operator) => {
 
 // check if decimal pressed
 const inputDecimal = (dot) => {
-    if(currentNumber.includes(dot)){
+    if(currentNumber.includes(dot)) {
         return
-    }else{
+    } else {
         currentNumber += dot
     }
 }
@@ -32,18 +32,18 @@ const inputDecimal = (dot) => {
 // perform calculations
 const calculate = () => {
     let result = ''
-    switch(calcOperator){
+    switch(calcOperator) {
         case '+':
             result = parseFloat(prevNumber) + parseFloat(currentNumber)
             break
         case '-':
-            result = prevNumber - currentNumber
+            result = parseFloat(prevNumber) - parseFloat(currentNumber)
             break
         case '*':
-            result = prevNumber * currentNumber
+            result = parseFloat(prevNumber) * parseFloat(currentNumber)
             break
         case '/':
-            result = prevNumber / currentNumber
+            result = parseFloat(prevNumber) / parseFloat(currentNumber)
             break
         default:
             break
